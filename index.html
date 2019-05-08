@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+  <title>Try 2</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<style>
+
+    
+body, html{ 
+  height: 100%;
+}
+.main-container {
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+    
+}
+
+ body {
+    font: 20px Montserrat, sans-serif;
+    line-height: 1.8;
+    color: #f5f6f7;
+    
+  }
+ 
+  header{
+    height:100%;
+    min-height: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    height:100%;
+    padding: 0 20px;
+  }    
+  p {font-size: 16px;}
+  .margin {margin-bottom: 45px;}
+  .bg-1 { 
+    /*background-color: #1abc9c;*/ /* Green */
+    background-color: white;
+    color: black;
+    background-image: url('img/Header-1.png');
+    background-repeat: no-repeat;
+    background-size: 100% 70%;
+   
+  }
+  .bg-2 { 
+    background-color: #474e5d; /* Dark Blue */
+    color: #ffffff;
+  }
+  .bg-3 { 
+    background-color: #ffffff; /* White */
+    color: #555555;
+  }
+  .bg-4 { 
+    background-color: #2f2f2f; /* Black Gray */
+    color: #fff;
+  }
+  .container-fluid {
+     flex-grow : 1;
+     width: 100%;  
+  }
+  .navbar {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border: 0;
+    border-radius: 0;
+    margin-bottom: 0;
+    font-size: 12px;
+    letter-spacing: 5px;
+  }
+  .navbar-nav  li a:hover {
+    color: #1abc9c !important;
+  }
+    
+  .first-section, .feature{
+    display:flex;
+    align-items:center;
+    font-family: Poppins;
+    line-height: 1;            
+  }
+    
+ .features{
+     background-image: url(img/Background.png);
+     background-repeat: no-repeat;
+     background-size: cover;
+     
+     
+ }
+    
+  .feature {
+        color:black;
+  }
+
+
+ .feature2-content{
+        color: #266dec;
+        font-family: Poppins;
+        font-size: 35px;
+        font-weight: 700;
+        line-height: 46px;
+        width:60%;
+ }
+
+.center {
+  margin: auto;
+  width: 60%;
+  
+}
+
+ .footer{
+     background-image: url(img/Footer.png);
+     background-repeat: no-repeat;
+     background-size: 100% 100%;  
+ }
+
+  
+
+
+</style>
+<body>
+
+<div class="main-container">
+<!-- Navbar -->
+<nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">
+        Me
+      </a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">ABOUT US</a></li>
+        <li><a href="#">FEATURES</a></li>
+        <li><a href="#">CONTACT US</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <!-- First Container -->
+    <div class="container-fluid bg-1">
+        <div class="first-section"  style=" height: 100%;" >     
+            <div class="col-sm-6  h-100 d-flex justify-content-center align-items-center">
+                <div class="text-center">
+                    <p>
+                    <span class="w3-jumbo w3-hide-small">Be aware when its convenient! </span> 
+                    <span class="w3-xxlarge w3-hide-large w3-hide-medium">Be aware when its convenient! </span> 
+                    </p>
+                    <p class="sub-content">Faithful assistant while working with mails </p>
+                </div>
+
+            </div>
+
+            <div class="col-sm-6 h-100 d-flex justify-content-center align-items-center">
+                <div>
+                    <img class="img-responsive" src="img/header-mobile.png">
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+    
+<div class="features">
+    <div>
+        <h3 class="text-center" style="color: black">Features</h3>
+    </div>
+    
+    <!-- feature 1 --> 
+    <div class="feature" > 
+            
+            <div class="col-sm-6  h-100 d-flex justify-content-center align-items-center">
+                <div class="text-center" style="padding-left: 50px;float:right;">
+                    <p>
+                    <span class="w3-xxlarge w3-hide-small">Feature 1: NAME is your best 
+                        assistant in the search
+                        for the perfect offer </span> 
+                    <span class="w3-xlarge w3-hide-large w3-hide-medium">Feature 1: NAME is your best 
+                        assistant in the search
+                        for the perfect offer </span> 
+                    </p>
+                    
+                </div>
+
+            </div>
+        
+            <div class="col-sm-6 h-100 d-flex justify-content-center align-items-center">
+                <div class="center">
+                    <img class="img-responsive" src="img/1_BLOCK.png">
+                </div>
+
+            </div>
+    </div>
+    
+     <!-- feature 2 -->
+    <div class="feature" > 
+            <div class="col-sm-6 h-100 d-flex justify-content-center align-items-center">
+                <div class="center">
+                    <img class="img-responsive" src="img/2_BLOCK.png">
+                </div>
+
+            </div>
+            <div class="col-sm-6  h-100 d-flex justify-content-center align-items-center">
+                <div class="text-left" style="padding-left: 20px;">
+                    <p>
+                    <span class="w3-xxlarge w3-hide-small">Feature 2: NAME is your best 
+                        assistant in the search
+                        for the perfect offer </span> 
+                    <span class="w3-xlarge w3-hide-large w3-hide-medium">Feature 2: NAME is your best 
+                        assistant in the search
+                        for the perfect offer </span> 
+                    </p>
+                    
+                </div>
+
+            </div>
+    </div>
+    
+    <!-- feature 3 --> 
+    <div class="feature" > 
+            
+            <div class="col-sm-6  h-100 d-flex justify-content-center align-items-center">
+                <div class="text-center" style="padding-left: 50px; float: right">
+                    <p>
+                    <span class="w3-xxlarge w3-hide-small">Feature 3: NAME is your best 
+                        assistant in the search
+                        for the perfect offer </span> 
+                    <span class="w3-xlarge w3-hide-large w3-hide-medium">Feature 3: NAME is your best 
+                        assistant in the search
+                        for the perfect offer </span> 
+                    </p>
+                    
+                </div>
+
+            </div>
+        
+            <div class="col-sm-6 h-100 d-flex justify-content-center align-items-center">
+                <div class="center">
+                    <img class="img-responsive" src="img/3_BLOCK.png">
+                </div>
+
+            </div>
+    </div>
+    
+   
+    
+    
+</div>
+    
+<div class="footer" style="width: 100%; height:80%;">
+
+</div>
+
+
+</body>
+</html>
