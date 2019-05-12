@@ -1,7 +1,9 @@
 <html>
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <script src="js/feature.js"></script>
@@ -9,26 +11,30 @@
 </head>
 
 <body>
-    <br />
+    <br /><br /><br /><br /><br /><br />
 
 
-    <div class="carousel">
-        <div style="float: left;  width: 330px;">
-            <br /><br />
-            <br /><br />
-            <p class="active">All your active deals at one place, Let our AI organize your deals for you</p>
-            <br /><br />
-            <p>Show Expired Promos in list view with date and swipe option to delete.</p>
-        </div>
-        <img src="assets/images/screen1.png" alt="nearby" />
-        <img src="assets/images/screen2.png" alt="expired" />
-        <img src="assets/images/screen3.png" alt="active" />
-        <div style="float: right;  width: 330px;">
-            <br /><br />
-            <br /><br />
-            <p class="nearby">Map view with nearby offers, Get Push Notifications when you are at store</p>
-            <br /><br />
-            <p class="expired">Declutter your emails from 100s of promotional email you receive each day.</p>
+    <div class=".container-fluid">
+        <div class="row">
+            <div class="col-sm-4" style="
+            width: 320px;
+            float: left;
+        ">
+                <p class="active">All your active deals at one place, Let our AI organize your deals for you</p>
+                <p>Show Expired Promos in list view with date and swipe option to delete.</p>
+            </div>
+            <div class="carousel col-sm-4">
+                <img src="assets/images/screen1.png" alt="nearby" />
+                <img src="assets/images/screen2.png" alt="expired" />
+                <img src="assets/images/screen3.png" alt="active" />
+            </div>
+            <div class="col-sm-4" style="
+            width: 320px;
+            float: right;
+        ">
+                <p class="nearby">Map view with nearby offers, Get Push Notifications when you are at store</p>
+                <p class="expired">Declutter your emails from 100s of promotional email you receive each day.</p>
+            </div>
         </div>
     </div>
 
