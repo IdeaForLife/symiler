@@ -9,3 +9,9 @@
     display: hidden; /* hide images until carousel prepares them */
     cursor: pointer; /* not needed if you wrap carousel items in links */
   }
+
+  p {
+    color: white;
+    font-size: large;
+    transition: all 0.3s ease-in-out 0.1s;
+  }
