@@ -484,9 +484,10 @@
          * to get the clicked item to the center, or will fire the custom event
          * the user passed in if the center item is clicked
          */
-        $(this).find('img').bind("click", function() {
-            var itemPosition = $(this).data().currentPosition;
-            var currentImageAlt = this.alt;
+
+        $.fn.showImageInCenter = function(thisItem) {
+            var itemPosition = thisItem.data().currentPosition;
+            var currentImageAlt = thisItem[0].alt;
             var prevImageAlt = data.currentCenterItem[0].alt;
             $('.' + prevImageAlt).css("transform", "");
             $('.' + prevImageAlt).css("text-shadow", "");
@@ -513,11 +514,11 @@
 
             var rotations = Math.abs(itemPosition);
             if (itemPosition == 0) {
-                options.clickedCenter($(this));
+                options.clickedCenter(thisItem);
             } else {
                 // Fire the 'moving' callbacks
                 options.movingFromCenter(data.currentCenterItem);
-                options.movingToCenter($(this));
+                options.movingToCenter(thisItem);
                 if (itemPosition < 0) {
                     data.currentDirection = 'backward';
                     rotateCarousel(rotations);
@@ -526,7 +527,7 @@
                     rotateCarousel(rotations);
                 }
             }
-        });
+        };
 
 
         /**
@@ -695,4 +696,18 @@
 
 $(document).ready(function() {
     var carousel = $('.carousel').waterwheelCarousel();
+    $(this).find('.feature').bind("click", function() {
+        var alt = $(this)[0].id
+        console.log(alt);
+        // TODO: Not working image object is wrong
+        // Get the image object and pass to the function        
+        var imgObj = $("img").attr("alt", alt)
+        console.log(imgObj)
+        carousel.showImageInCenter(imgObj);
+    });
+    // This is working
+    $(this).find('img').bind("click", function() {
+        console.log($(this))
+        carousel.showImageInCenter($(this));
+    });
 });
