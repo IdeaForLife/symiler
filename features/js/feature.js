@@ -698,10 +698,11 @@ $(document).ready(function() {
     var carousel = $('.carousel').waterwheelCarousel();
     $(this).find('.feature').bind("click", function() {
         var imageId = $(this)[0].id
-            // TODO: Not working image object is wrong
-            // Get the image object and pass to the function        
-        var imgObj = $('#' + imageId + 'Img')
-        carousel.showImageInCenter(imgObj);
+        if (imageId.indexOf('_') > 1) {
+            var ftr = imageId.substring(0, imageId.indexOf('_'));
+            var imgObj = $('#' + ftr + 'Img')
+            carousel.showImageInCenter(imgObj);
+        }
     });
     // This is working
     $(this).find('img').bind("click", function() {
