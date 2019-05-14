@@ -697,17 +697,14 @@
 $(document).ready(function() {
     var carousel = $('.carousel').waterwheelCarousel();
     $(this).find('.feature').bind("click", function() {
-        var alt = $(this)[0].id
-        console.log(alt);
-        // TODO: Not working image object is wrong
-        // Get the image object and pass to the function        
-        var imgObj = $("img").attr("alt", alt)
-        console.log(imgObj)
+        var imageId = $(this)[0].id
+            // TODO: Not working image object is wrong
+            // Get the image object and pass to the function        
+        var imgObj = $('#' + imageId + 'Img')
         carousel.showImageInCenter(imgObj);
     });
     // This is working
     $(this).find('img').bind("click", function() {
-        console.log($(this))
         carousel.showImageInCenter($(this));
     });
 });
