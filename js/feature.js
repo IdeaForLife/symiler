@@ -489,12 +489,15 @@
             var itemPosition = thisItem.data().currentPosition;
             var currentImageAlt = thisItem[0].alt;
             var prevImageAlt = data.currentCenterItem[0].alt;
-            $('.' + prevImageAlt).css("transform", "");
-            $('.' + prevImageAlt).css("text-shadow", "");
-            
-            $('.' + currentImageAlt).css("transform", "scale(1.15)");
-            $('.' + currentImageAlt).css("text-shadow", "7px 0px 17px #f8f3f3");
-            
+            //$('#' + prevImageAlt).css("transform", "");
+            //$('#' + prevImageAlt).css("text-shadow", "");
+            $('#' + prevImageAlt).css("border-radius", "");
+            $('#' + prevImageAlt).css("border", "");
+            //$('#' + currentImageAlt).css("transform", "scale(1.15)");
+            //$('#' + currentImageAlt).css("text-shadow", "7px 0px 17px #f8f3f3");
+            $('#' + currentImageAlt).css("border-radius", "25px");
+            $('#' + currentImageAlt).css("border", "1px solid #75e1dc");
+
             if (options.imageNav == false) {
                 return;
             }
