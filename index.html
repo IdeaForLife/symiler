@@ -8,18 +8,39 @@
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="js/feature.js"></script>
+  <link rel="stylesheet" href="styles/feature.css">
 <style>
 
     
 body, html{ 
   height: 100%;
+    color:black;
 }
 .main-container {
     display: flex;
     flex-flow: column;
     height: 100%;
+    background-image:  url('img/vertical.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
     
 }
+    
+.main-container:after {
+    height: 100%;
+    background: url('img/shape5.svg') no-repeat center bottom/cover;
+    content: "";
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    box-sizing: border-box;
+}
+    
+
 
  body {
     font: 20px Montserrat, sans-serif;
@@ -41,11 +62,11 @@ body, html{
   .margin {margin-bottom: 45px;}
   .bg-1 { 
     /*background-color: #1abc9c;*/ /* Green */
+    /*
     background-color: white;
     color: black;
-    background-image: url('img/Header-1.png');
-    background-repeat: no-repeat;
-    background-size: 100% 70%;
+    */
+      z-index: 100;
    
   }
   .bg-2 { 
@@ -81,20 +102,30 @@ body, html{
     display:flex;
     align-items:center;
     font-family: Poppins;
-    line-height: 1;            
+    line-height: 1;   
+    color:black;
   }
     
  .features{
-     background-image: url(img/Background.png);
-     background-repeat: no-repeat;
-     background-size: cover;
-     
-     
+     min-height: 100%;
+    margin-top: 100px;
  }
     
-  .feature {
-        color:black;
+  
+
+ .features h4{
+     color: gray;
+     font-weight: 600;
+     
   }
+    
+    
+  .features p{
+     color: gray;
+     line-height: 1.3;
+  }
+  
+  
 
 
  .feature2-content{
@@ -117,6 +148,13 @@ body, html{
      background-repeat: no-repeat;
      background-size: 100% 100%;  
  }
+   
+    
+.navbar-default{
+    z-index: 1000;
+    
+}
+
 
   
 
@@ -135,36 +173,35 @@ body, html{
         <span class="icon-bar"></span>                        
       </button>
       <a class="navbar-brand" href="#">
-        Me
+        <img src="assets/images/logo.png">
       </a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#">ABOUT US</a></li>
-        <li><a href="#">FEATURES</a></li>
-        <li><a href="#">CONTACT US</a></li>
+        <li><a href="#keyfeatures">FEATURES</a></li>
       </ul>
     </div>
   </div>
 </nav>
 
     <!-- First Container -->
-    <div class="container-fluid bg-1">
-        <div class="first-section"  style=" height: 100%;" >     
-            <div class="col-sm-6  h-100 d-flex justify-content-center align-items-center">
+<div class="container-fluid bg-1">
+        <div class="first-section"  style=" height: 100%; color: black" >     
+            <div class="col-sm-6  h-100 d-flex justify-content-center align-items-center" >
                 <div class="text-center">
-                    <p>
+                    <p style="color : black">
                     <span class="w3-jumbo w3-hide-small">Be aware when its convenient! </span> 
                     <span class="w3-xxlarge w3-hide-large w3-hide-medium">Be aware when its convenient! </span> 
                     </p>
-                    <p class="sub-content">Faithful assistant while working with mails </p>
+                    <p class="w3-large" style="color : black">Faithful assistant while working with mails </p>
                 </div>
 
             </div>
 
             <div class="col-sm-6 h-100 d-flex justify-content-center align-items-center">
                 <div>
-                    <img class="img-responsive" src="img/header-mobile.png">
+                    <img class="img-responsive" src="assets/images/magicfunnel.png">
                 </div>
 
             </div>
@@ -173,95 +210,86 @@ body, html{
     </div>
 </div>
     
-<div class="features">
+
+<!-- Features-->
+<div class="features" id="keyfeatures" >
+    
+        <div class="featureheading text-center" >
+           <p style="width: 100%; color:black; font-weight: 800; letter-spacing: 2px; text-decoration: underline;"> A FEW KEY FEATURES OF SYMILER <p>
+        </div>
+    
+        <div class="row" style=" height: 100%; cursor: pointer">
+            <div class="col-md-6"  style="height: 100%; ">
+                <div class="carousel" style ="height: 800px;">
+                    <img id="nearbyImg" src="assets/images/mapView.png" alt="nearby" class="img-responsive" />
+                    <img id="expiredImg" src="assets/images/expired.png" alt="expired" class="img-responsive" />
+                    <img id="activeImg" src="assets/images/active.png" alt="active" class="img-responsive" />
+                    <img id="calendarImg" src="assets/images/calenderView.png" alt="calendar" class="img-responsive" />
+                </div>
+            </div>
+            <div class="col-md-6" style=" padding-left: 20px;  ">
+                <div id="active" style="padding:20px">
+                    
+                    <img id="active_icon" src="assets/images/active_logo.png" style="width: 12%" class="img-responsive center-block active feature" />
+                    <h4 id="active_title" class="text-center active feature">DEAL BOX</h4>
+                    <p id="active_desc" class="text-justify active feature">All your deals in one place. No more checking different emails, no more last minute searches. Symiler puts all you deals, in a easy to use Dealbox.</p>
+                </div>
+               
+                <div id="calendar" style="padding:20px">
+                    <img id="calendar_icon" src="assets/images/calendar_icon.png" style="width: 12%" class="img-responsive center-block calendar feature" />
+                    <h4 id="calendar_title" class="text-center calendar feature">SMART VIEWS</h4>
+                    <p id="calendar_desc" class="text-justify calendar feature">Let our proprietary AI algorithms sort and organize your deals for you. View by Calendar, or category, or explore all. Symiler, organizes the emails for your ease. Let Symiler work for you, while you shop at ease.</p>
+                </div>
+                
+                <div id="nearby" style="padding:20px">
+                    <img id="nearby_icon" src="assets/images/nearby_icon.png" style="width: 12%" class="img-responsive center-block nearby feature" />
+                    <h4 id="nearby_title" class="text-center nearby feature">NEARBY DEALS</h4>
+                    <p id="nearby_desc" class="text-justify nearby feature">Map view with nearby offers, Get Push Notifications when you are at store</p>
+                </div>
+              
+                <div id="expired" style="padding:20px">
+                    <img id="expired_icon" src="assets/images/expired_icon.png" style="width: 12%" class="img-responsive center-block expired feature" />
+                    <h4 id="expired_title" class="text-center expired feature">DECLUTTER YOUR emails</h4>
+                    <p id="expired_desc" class="text-justify expired feature">Symiler automatically cleans your inbox by archiving outdated deals, organizing active deals, and moving your favorite deals to your Symiler Dealbox</p>
+                </div>
+            </div>
+            
+           </div>
+    </div>
+    
+    <div style="width: 100%; height: 100%; margin-top: 50px; color:gray" class="addFeatures">
+        <div class="featureheading text-center" >
+           <p style="width: 100%; color:black; font-weight: 800; letter-spacing: 2px; text-decoration: underline;"> OTHER FEATURES <p>
+        </div>
+        
+        <div class="row" style="margin-top: 75px;">
+            <div class="col-md-4 col-sm-6">
+                <p class="text-center" style="color: #5CA4D5"><i class="fa fa-bell-o w3-margin-bottom w3-jumbo"></i></p>
+                <h4 class="text-center" style="font-weight: 800; font-size: 15px"> SMART NOTIFICATIONS</h4>
+                <p class="text-center">Get notified on the go. Our smart notification, alerts you about available deals, depending on your current location. Shop carefree, while we bring the deals right to you.
+                </p>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <p class="text-center" style="color: #5CA4D5"><i class="fa fa-share-alt w3-margin-bottom w3-jumbo text-center"></i></p>
+                <h4 class="text-center" style="font-weight: 800; font-size: 15px"> DEAL SHARING </h4>
+                <p class="text-center">Share your unused deals with friends and family that might need them. Borrow deal you need with one click request from your friends. Let’s save together!</p>
+            </div>
+            
+             <div class="col-md-4 col-sm-6">
+                 <p class="text-center" style="color: #5CA4D5"><i class="fa fa-snowflake-o w3-margin-bottom w3-jumbo text-center"></i> </p>
+                <h4 class="text-center" style="font-weight: 800; font-size: 15px"> DEALS WISHLIST </h4>
+                <p class="text-center">Let us know deals you want, Symiler’s tireless helpers bring deals you want, right into your dealsbox.</p>
+            </div>
+        
+        </div>
+        
+        
+    </div>
+    
+
+<!-- Footer -->
     <div>
-        <h3 class="text-center" style="color: black">Features</h3>
     </div>
-    
-    <!-- feature 1 --> 
-    <div class="feature" > 
-            
-            <div class="col-sm-6  h-100 d-flex justify-content-center align-items-center">
-                <div class="text-center" style="padding-left: 50px;float:right;">
-                    <p>
-                    <span class="w3-xxlarge w3-hide-small">Feature 1: NAME is your best 
-                        assistant in the search
-                        for the perfect offer </span> 
-                    <span class="w3-xlarge w3-hide-large w3-hide-medium">Feature 1: NAME is your best 
-                        assistant in the search
-                        for the perfect offer </span> 
-                    </p>
-                    
-                </div>
-
-            </div>
-        
-            <div class="col-sm-6 h-100 d-flex justify-content-center align-items-center">
-                <div class="center">
-                    <img class="img-responsive" src="img/1_BLOCK.png">
-                </div>
-
-            </div>
-    </div>
-    
-     <!-- feature 2 -->
-    <div class="feature" > 
-            <div class="col-sm-6 h-100 d-flex justify-content-center align-items-center">
-                <div class="center">
-                    <img class="img-responsive" src="img/2_BLOCK.png">
-                </div>
-
-            </div>
-            <div class="col-sm-6  h-100 d-flex justify-content-center align-items-center">
-                <div class="text-left" style="padding-left: 20px;">
-                    <p>
-                    <span class="w3-xxlarge w3-hide-small">Feature 2: NAME is your best 
-                        assistant in the search
-                        for the perfect offer </span> 
-                    <span class="w3-xlarge w3-hide-large w3-hide-medium">Feature 2: NAME is your best 
-                        assistant in the search
-                        for the perfect offer </span> 
-                    </p>
-                    
-                </div>
-
-            </div>
-    </div>
-    
-    <!-- feature 3 --> 
-    <div class="feature" > 
-            
-            <div class="col-sm-6  h-100 d-flex justify-content-center align-items-center">
-                <div class="text-center" style="padding-left: 50px; float: right">
-                    <p>
-                    <span class="w3-xxlarge w3-hide-small">Feature 3: NAME is your best 
-                        assistant in the search
-                        for the perfect offer </span> 
-                    <span class="w3-xlarge w3-hide-large w3-hide-medium">Feature 3: NAME is your best 
-                        assistant in the search
-                        for the perfect offer </span> 
-                    </p>
-                    
-                </div>
-
-            </div>
-        
-            <div class="col-sm-6 h-100 d-flex justify-content-center align-items-center">
-                <div class="center">
-                    <img class="img-responsive" src="img/3_BLOCK.png">
-                </div>
-
-            </div>
-    </div>
-    
-   
-    
-    
-</div>
-    
-<div class="footer" style="width: 100%; height:80%;">
-
-</div>
 
 
 </body>

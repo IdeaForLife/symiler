@@ -491,9 +491,10 @@
             var prevImageAlt = data.currentCenterItem[0].alt;
             $('.' + prevImageAlt).css("transform", "");
             $('.' + prevImageAlt).css("text-shadow", "");
-
+            
             $('.' + currentImageAlt).css("transform", "scale(1.15)");
             $('.' + currentImageAlt).css("text-shadow", "7px 0px 17px #f8f3f3");
+            
             if (options.imageNav == false) {
                 return;
             }
