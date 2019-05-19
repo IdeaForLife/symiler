@@ -99,6 +99,7 @@
          * @param {string} message Text to be placed in pre element.
          */
         function appendPre(message) {
+            console.log(message)
             var pre = document.getElementById('content');
             var textContent = document.createTextNode(message + '\n');
             pre.appendChild(textContent);
@@ -149,7 +150,7 @@
                         getPageOfMessages(request, result);
                     } else {
                         console.log("call me")
-                        console.log(result);
+                            //console.log(result);
                         callback(result);
                     }
                 });
