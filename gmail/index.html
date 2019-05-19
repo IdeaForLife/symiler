@@ -100,9 +100,11 @@
          */
         function appendPre(message) {
             console.log(message)
-            var pre = document.getElementById('content');
-            var textContent = document.createTextNode(message.payload.body + '\n');
-            pre.appendChild(textContent);
+            if (message.payload.body.data) {
+                var pre = document.getElementById('content');
+                var textContent = document.createTextNode(message.payload.body.data + '\n');
+                pre.appendChild(textContent);
+            }
         }
 
         /**
