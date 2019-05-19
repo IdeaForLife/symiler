@@ -15,6 +15,11 @@
 
     <pre id="content" style="white-space: pre-wrap;"></pre>
 
+    <table id="myTable">
+        <th>Message Summary</th>
+        <th>Message Raw Body</th>
+    </table>
+
     <script type="text/javascript">
         // Client ID and API key from the Developer Console
         var CLIENT_ID = '742054112191-hqhdeeoo2n2fnhc6s8ima1sntgb9tpe6.apps.googleusercontent.com';
@@ -91,7 +96,7 @@
         function handleSignoutClick(event) {
             gapi.auth2.getAuthInstance().signOut();
         }
-
+        var i = 0;
         /**
          * Append a pre element to the body containing the given message
          * as its text node. Used to display the results of the API call.
@@ -104,6 +109,13 @@
                 var pre = document.getElementById('content');
                 var textContent = document.createTextNode('message blob:\n' + message.payload.body.data + '\n');
                 pre.appendChild(textContent);
+
+                var table = document.getElementById("myTable");
+                var row = table.insertRow(i);
+                var cell1 = row.insertCell(0);
+                var cell2 = row.insertCell(1);
+                cell1.innerHTML = message.snippet;
+                cell2.innerHTML = message.payload.body.data;
 
             }
         }
