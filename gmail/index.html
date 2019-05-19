@@ -102,8 +102,9 @@
             console.log(message)
             if (message.payload.body.data) {
                 var pre = document.getElementById('content');
-                var textContent = document.createTextNode(message.payload.body.data + '\n');
+                var textContent = document.createTextNode('message blob:\n' + message.payload.body.data + '\n');
                 pre.appendChild(textContent);
+
             }
         }
 
