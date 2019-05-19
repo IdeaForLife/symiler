@@ -184,7 +184,8 @@
                         messagesList = messagesList.concat(resp);
                         console.log(messagesList.length);
                         if (messagesList.length == result.length) {
-                            callback(messagesList);
+                            messagesList.forEach(callback)
+
                         }
                     });
                 });
