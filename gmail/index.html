@@ -16,7 +16,7 @@
     <pre id="content" style="white-space: pre-wrap;"></pre>
 
     <table id="myTable">
-        <tr>
+        <tr style="text-align: left">
             <th>Message Summary</th>
             <th>Mime Type</th>
             <th>Message Raw Body</th>
@@ -99,7 +99,7 @@
         function handleSignoutClick(event) {
             gapi.auth2.getAuthInstance().signOut();
         }
-        var i = 0;
+        var i = 1;
         /**
          * Append a pre element to the body containing the given message
          * as its text node. Used to display the results of the API call.
