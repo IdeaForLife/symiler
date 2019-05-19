@@ -122,9 +122,8 @@
 
                 if (j == 0) {
                     var html = atob(message.payload.body.data.replace(/-/g, '+').replace(/_/g, '/'));
-                    var pre = document.getElementById('content');
-                    var textContent = document.createTextNode(html);
-                    pre.appendChild(textContent);
+                    var opened = window.open("");
+                    opened.document.write(html);
                     j++;
                 }
             }
