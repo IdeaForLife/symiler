@@ -68,7 +68,10 @@
             if (isSignedIn) {
                 authorizeButton.style.display = 'none';
                 signoutButton.style.display = 'block';
-                listLabels();
+                //    listLabels();
+                listMessages("me", "category:promotions", function messages(result) {
+                    getMessage("me", result, appendPre);
+                });
             } else {
                 authorizeButton.style.display = 'block';
                 signoutButton.style.display = 'none';
@@ -121,6 +124,70 @@
                     appendPre('No Labels found.');
                 }
             });
+
+            /**
+             * Retrieve Messages in user's mailbox matching query.
+             *
+             * @param  {String} userId User's email address. The special value 'me'
+             * can be used to indicate the authenticated user.
+             * @param  {String} query String used to filter the Messages listed.
+             * @param  {Function} callback Function to call when the request is complete.
+             */
+            function listMessages(userId, query, callback) {
+                var getPageOfMessages = function(request, result) {
+                    request.execute(function(resp) {
+                        result = result.concat(resp.messages);
+                        var nextPageToken = resp.nextPageToken;
+                        if (nextPageToken && result.length < 50) {
+                            request = gapi.client.gmail.users.messages.list({
+                                'userId': userId,
+                                'pageToken': nextPageToken,
+                                'q': query,
+                                'maxResults': 10
+                            });
+                            getPageOfMessages(request, result);
+                        } else {
+                            console.log("call me")
+                            console.log(result);
+                            callback(result);
+                        }
+                    });
+                };
+                var initialRequest = gapi.client.gmail.users.messages.list({
+                    'userId': userId,
+                    'q': query,
+                    'maxResults': 10
+                });
+                getPageOfMessages(initialRequest, []);
+            }
+
+            /**
+             * Get Message with given ID.
+             *
+             * @param  {String} userId User's email address. The special value 'me'
+             * can be used to indicate the authenticated user.
+             * @param  {String} messageId ID of Message to get.
+             * @param  {Function} callback Function to call when the request is complete.
+             */
+            function getMessage(userId, result, callback) {
+                var messagesList = [];
+                var getAllMessages = function(result) {
+                    result.forEach(element => {
+                        var request = gapi.client.gmail.users.messages.get({
+                            'userId': userId,
+                            'id': element.id
+                        });
+                        request.execute(function(resp) {
+                            messagesList = messagesList.concat(resp);
+                            console.log(messagesList.length);
+                            if (messagesList.length == result.length) {
+                                callback(messagesList);
+                            }
+                        });
+                    });
+                }
+                getAllMessages(result);
+            }
         }
     </script>
 
