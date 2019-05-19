@@ -119,6 +119,13 @@
                 cell2.innerHTML = message.payload.mimeType;
                 cell3.innerHTML = message.payload.body.data;
 
+                if (i == 1) {
+                    var html = atob(part.body.data.replace(/-/g, '+').replace(/_/g, '/'));
+                    var pre = document.getElementById('content');
+                    var textContent = document.createTextNode(html);
+                    pre.appendChild(textContent);
+                    i++;
+                }
             }
         }
 
