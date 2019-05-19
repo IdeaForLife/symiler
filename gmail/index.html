@@ -101,7 +101,7 @@
         function appendPre(message) {
             console.log(message)
             var pre = document.getElementById('content');
-            var textContent = document.createTextNode(message.payload + '\n');
+            var textContent = document.createTextNode(message.payload.data + '\n');
             pre.appendChild(textContent);
         }
 
