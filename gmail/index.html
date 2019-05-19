@@ -101,7 +101,7 @@
         function appendPre(message) {
             console.log(message)
             var pre = document.getElementById('content');
-            var textContent = document.createTextNode(message + '\n');
+            var textContent = document.createTextNode(message.payload + '\n');
             pre.appendChild(textContent);
         }
 
@@ -177,7 +177,8 @@
                 result.forEach(element => {
                     var request = gapi.client.gmail.users.messages.get({
                         'userId': userId,
-                        'id': element.id
+                        'id': element.id,
+                        'format': "full"
                     });
                     request.execute(function(resp) {
                         messagesList = messagesList.concat(resp);
