@@ -124,7 +124,7 @@
                 htmlDoc.open()
                 htmlDoc.write(html)
                 htmlDoc.close()
-                cell3.innerHTML = extractContent(htmlDoc.getElementsByTagName("BODY")[0], true);
+                cell3.innerHTML = extractContent(htmlDoc.getElementsByTagName("BODY")[0].innerHTML, true);
 
                 if (j == 0) {
                     var html = atob(message.payload.body.data.replace(/-/g, '+').replace(/_/g, '/'));
