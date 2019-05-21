@@ -118,7 +118,7 @@
                 var cell3 = row.insertCell(2);
                 cell1.innerHTML = message.snippet;
                 cell2.innerHTML = message.payload.mimeType;
-                cell3.innerHTML = extractContent(atob(message.payload.body.data.replace(/-/g, '+').replace(/_/g, '/')), true);
+                cell3.innerHTML = extractContent(atob(message.payload.body.data.replace(/-/g, '+').replace(/_/g, '/').getElementsByTagName("BODY")[0]), true);
 
 
                 if (j == 0) {
