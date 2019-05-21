@@ -119,8 +119,13 @@
                 cell1.innerHTML = message.snippet;
                 cell2.innerHTML = message.payload.mimeType;
                 var html = atob(message.payload.body.data.replace(/-/g, '+').replace(/_/g, '/'));
-                cell3.innerHTML = extractContent(html.getElementsByTagName("BODY")[0], true);
                 console.log(html)
+                var htmlDoc = document.implementation.createHTMLDocument('');
+                htmlDoc.open()
+                htmlDoc.write(html)
+                htmlDoc.close()
+                cell3.innerHTML = extractContent(htmlDoc.getElementsByTagName("BODY")[0], true);
+
                 if (j == 0) {
                     var html = atob(message.payload.body.data.replace(/-/g, '+').replace(/_/g, '/'));
                     var opened = window.open("");
