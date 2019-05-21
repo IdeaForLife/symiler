@@ -77,7 +77,7 @@
                 authorizeButton.style.display = 'none';
                 signoutButton.style.display = 'block';
                 //    listLabels();
-                listMessages("me", "factory@email.jcrew.com", function messages(result) {
+                listMessages("me", "category:promotions", function messages(result) {
                     getMessage("me", result, appendPre);
                 });
             } else {
