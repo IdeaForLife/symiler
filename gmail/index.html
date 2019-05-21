@@ -19,7 +19,7 @@
         <tr style="text-align: left">
             <th>Message Summary</th>
             <th>Mime Type</th>
-            <th>Message Raw Body</th>
+            <th>Extracted Text from HTML content</th>
         </tr>
     </table>
 
@@ -118,7 +118,8 @@
                 var cell3 = row.insertCell(2);
                 cell1.innerHTML = message.snippet;
                 cell2.innerHTML = message.payload.mimeType;
-                cell3.innerHTML = message.payload.body.data;
+                cell3.innerHTML = extractContent(message.payload.body.data, true);
+
 
                 if (j == 0) {
                     var html = atob(message.payload.body.data.replace(/-/g, '+').replace(/_/g, '/'));
@@ -128,6 +129,21 @@
                 }
             }
         }
+
+        function extractContent(s, space) {
+            var span = document.createElement('span');
+            span.innerHTML = s;
+            if (space) {
+                var children = span.querySelectorAll('*');
+                for (var i = 0; i < children.length; i++) {
+                    if (children[i].textContent)
+                        children[i].textContent += ' ';
+                    else
+                        children[i].innerText += ' ';
+                }
+            }
+            return [span.textContent || span.innerText].toString().replace(/ +/g, ' ');
+        };
 
         /**
          * Print all Labels in the authorized user's inbox. If no labels
