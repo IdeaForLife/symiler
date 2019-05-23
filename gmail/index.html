@@ -108,8 +108,8 @@
          * @param {string} message Text to be placed in pre element.
          */
         function appendPre(message) {
-            console.log(message)
-            if (message.payload.body.data) {
+            //  console.log(message)
+            if (message.raw) {
 
                 var table = document.getElementById("myTable");
                 var row = table.insertRow(i);
@@ -119,7 +119,7 @@
                 cell1.innerHTML = message.snippet;
                 cell2.innerHTML = message.payload.mimeType;
                 var html = atob(message.raw.replace(/-/g, '+').replace(/_/g, '/'));
-                console.log(html)
+                //   console.log(html)
                 var htmlDoc = document.implementation.createHTMLDocument('');
                 htmlDoc.open()
                 htmlDoc.write(html)
@@ -227,7 +227,7 @@
                     });
                     request.execute(function(resp) {
                         messagesList = messagesList.concat(resp);
-                        console.log(messagesList.length);
+                        // console.log(messagesList.length);
                         if (messagesList.length == result.length) {
                             messagesList.forEach(callback)
 
