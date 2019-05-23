@@ -119,7 +119,7 @@
                 cell1.innerHTML = message.snippet;
                 cell2.innerHTML = message.payload.mimeType;
                 var html = atob(message.raw.replace(/-/g, '+').replace(/_/g, '/'));
-                // console.log(html)
+                console.log(html)
                 var htmlDoc = document.implementation.createHTMLDocument('');
                 htmlDoc.open()
                 htmlDoc.write(html)
