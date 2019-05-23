@@ -139,14 +139,14 @@
                     cell3.innerHTML = extractContent(htmlDoc.getElementsByTagName("BODY")[0].innerHTML, true);
                 }
                 if (j == 0 && message.payload.body.data) {
-                    console.log(parseMessage(message))
+                    //console.log(parseMessage(message))
                     var html = atob(message.payload.body.data.replace(/-/g, '+').replace(/_/g, '/'));
                     var opened = window.open("");
                     opened.document.write(html);
                     j++;
                 }
 
-                if (k == 0 && !parseMessage(message).textPlain) {
+                if (k == 0 && extractContent(htmlDoc.getElementsByTagName("BODY")[0].innerHTML, true).startsWith("html")) {
                     console.log(parseMessage(message));
                     k++;
                 }
