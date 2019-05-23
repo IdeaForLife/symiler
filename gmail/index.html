@@ -22,7 +22,7 @@
             <th>Extracted Text from HTML content</th>
         </tr>
     </table>
-
+    <script src="parser.js"></script>
     <script type="text/javascript">
         // Client ID and API key from the Developer Console
         var CLIENT_ID = '742054112191-hqhdeeoo2n2fnhc6s8ima1sntgb9tpe6.apps.googleusercontent.com';
@@ -109,7 +109,7 @@
          */
         function appendPre(message) {
             //  console.log(message)
-            if (message.raw) {
+            if (message) {
 
                 var table = document.getElementById("myTable");
                 var row = table.insertRow(i);
@@ -117,18 +117,19 @@
                 var cell2 = row.insertCell(1);
                 var cell3 = row.insertCell(2);
                 cell1.innerHTML = message.snippet;
-                //cell2.innerHTML = message.payload.mimeType;
-                cell2.innerHTML = "Raw"
-                var html = atob(message.raw.replace(/-/g, '+').replace(/_/g, '/'));
+                cell2.innerHTML = message.payload.mimeType;
+                //cell2.innerHTML = "Raw"
+                //var html = atob(message.raw.replace(/-/g, '+').replace(/_/g, '/'));
                 //   console.log(html)
-                var htmlDoc = document.implementation.createHTMLDocument('');
-                htmlDoc.open()
-                htmlDoc.write(html)
-                htmlDoc.close()
-                cell3.innerHTML = extractContent(htmlDoc.getElementsByTagName("BODY")[0].innerHTML, true);
-
+                //var htmlDoc = document.implementation.createHTMLDocument('');
+                //htmlDoc.open()
+                //htmlDoc.write(html)
+                //htmlDoc.close()
+                //cell3.innerHTML = extractContent(htmlDoc.getElementsByTagName("BODY")[0].innerHTML, true);
+                cell3.innerHTML = parsedMessage(message)
                 if (j == 0) {
-                    var html = atob(message.raw.replace(/-/g, '+').replace(/_/g, '/'));
+                    console.log(parsedMessage(message))
+                    var html = atob(message.body.data.replace(/-/g, '+').replace(/_/g, '/'));
                     var opened = window.open("");
                     opened.document.write(html);
                     j++;
@@ -224,7 +225,7 @@
                     var request = gapi.client.gmail.users.messages.get({
                         'userId': userId,
                         'id': element.id,
-                        'format': "raw"
+                        'format': "full"
                     });
                     request.execute(function(resp) {
                         messagesList = messagesList.concat(resp);
