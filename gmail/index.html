@@ -101,6 +101,7 @@
         }
         var i = 1;
         var j = 0;
+        var k = 0;
         /**
          * Append a pre element to the body containing the given message
          * as its text node. Used to display the results of the API call.
@@ -121,15 +122,16 @@
                 //cell2.innerHTML = "Raw"
                 //var html = atob(message.raw.replace(/-/g, '+').replace(/_/g, '/'));
                 //   console.log(html)
-                //var htmlDoc = document.implementation.createHTMLDocument('');
-                //htmlDoc.open()
-                //htmlDoc.write(html)
-                //htmlDoc.close()
-                //cell3.innerHTML = extractContent(htmlDoc.getElementsByTagName("BODY")[0].innerHTML, true);
+
                 if (parseMessage(message).textPlain) {
                     cell3.innerHTML = "*****Symiler extracted text from email********\n" + parseMessage(message).textPlain
                 } else {
-                    cell3.innerHTML = "*****Symiler not able to parse this email*******\n" + JSON.stringify(parseMessage(message))
+                    //cell3.innerHTML = "*****Symiler not able to parse this email*******\n" + JSON.stringify(parseMessage(message))
+                    var htmlDoc = document.implementation.createHTMLDocument('');
+                    htmlDoc.open()
+                    htmlDoc.write(parseMessage(message).textHtml)
+                    htmlDoc.close()
+                    cell3.innerHTML = extractContent(htmlDoc.getElementsByTagName("BODY")[0].innerHTML, true);
                 }
                 if (j == 0 && message.payload.body.data) {
                     console.log(parseMessage(message))
@@ -137,6 +139,11 @@
                     var opened = window.open("");
                     opened.document.write(html);
                     j++;
+                }
+
+                if (k == 0 && !parseMessage(message).textPlain) {
+                    console.log(parseMessage(message));
+                    k++;
                 }
             }
         }
