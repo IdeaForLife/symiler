@@ -122,11 +122,13 @@
                 //cell2.innerHTML = "Raw"
                 //var html = atob(message.raw.replace(/-/g, '+').replace(/_/g, '/'));
                 //   console.log(html)
-
+                var parsedMessage = parseMessage(message).textHtml
+                var regex = /<style type="text\/css">([\s\S]*?)<\/style>/;
+                parsedMessage = parsedMessage.replace(regex, '');
                 if (parseMessage(message).textPlain) {
                     var htmlDoc = document.implementation.createHTMLDocument('');
                     htmlDoc.open()
-                    htmlDoc.write(parseMessage(message).textHtml)
+                    htmlDoc.write(parsedMessage)
                     htmlDoc.close()
                     cell3.innerHTML = "*****Symiler textPlain number of body tags: " + htmlDoc.getElementsByTagName("BODY").length + "********\n" + extractContent(htmlDoc.getElementsByTagName("BODY")[0].innerHTML, true);
                     //cell3.innerHTML = "*****Symiler extracted text from email********\n" + parseMessage(message).textPlain
@@ -134,7 +136,7 @@
                     //cell3.innerHTML = "*****Symiler not able to parse this email*******\n" + JSON.stringify(parseMessage(message))
                     var htmlDoc = document.implementation.createHTMLDocument('');
                     htmlDoc.open()
-                    htmlDoc.write(parseMessage(message).textHtml)
+                    htmlDoc.write(parsedMessage)
                     htmlDoc.close()
                     cell3.innerHTML = "*****Symiler textHtml number of body tags: " + htmlDoc.getElementsByTagName("BODY").length + "********\n" + extractContent(htmlDoc.getElementsByTagName("BODY")[0].innerHTML, true);
                 }
