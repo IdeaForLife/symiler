@@ -126,9 +126,9 @@
                 //htmlDoc.write(html)
                 //htmlDoc.close()
                 //cell3.innerHTML = extractContent(htmlDoc.getElementsByTagName("BODY")[0].innerHTML, true);
-                cell3.innerHTML = parsedMessage(message)
+                cell3.innerHTML = parseMessage(message)
                 if (j == 0) {
-                    console.log(parsedMessage(message))
+                    console.log(parseMessage(message))
                     var html = atob(message.body.data.replace(/-/g, '+').replace(/_/g, '/'));
                     var opened = window.open("");
                     opened.document.write(html);
