@@ -118,7 +118,7 @@
                 var cell3 = row.insertCell(2);
                 cell1.innerHTML = message.snippet;
                 cell2.innerHTML = message.payload.mimeType;
-                var html = atob(message.payload.body.data.replace(/-/g, '+').replace(/_/g, '/'));
+                var html = atob(message.raw.replace(/-/g, '+').replace(/_/g, '/'));
                 // console.log(html)
                 var htmlDoc = document.implementation.createHTMLDocument('');
                 htmlDoc.open()
@@ -127,7 +127,7 @@
                 cell3.innerHTML = extractContent(htmlDoc.getElementsByTagName("BODY")[0].innerHTML, true);
 
                 if (j == 0) {
-                    var html = atob(message.payload.body.data.replace(/-/g, '+').replace(/_/g, '/'));
+                    var html = atob(message.raw.replace(/-/g, '+').replace(/_/g, '/'));
                     var opened = window.open("");
                     opened.document.write(html);
                     j++;
@@ -223,7 +223,7 @@
                     var request = gapi.client.gmail.users.messages.get({
                         'userId': userId,
                         'id': element.id,
-                        'format': "full"
+                        'format': "raw"
                     });
                     request.execute(function(resp) {
                         messagesList = messagesList.concat(resp);
