@@ -127,9 +127,9 @@
                 //htmlDoc.close()
                 //cell3.innerHTML = extractContent(htmlDoc.getElementsByTagName("BODY")[0].innerHTML, true);
                 if (parseMessage(message).textPlain) {
-                    cell3.innerHTML = "Symiler extracted text from email\n" + parseMessage(message).textPlain
+                    cell3.innerHTML = "*****Symiler extracted text from email********\n" + parseMessage(message).textPlain
                 } else {
-                    cell3.innerHTML = "Symiler not able to parse this email\n" + parseMessage(message)
+                    cell3.innerHTML = "*****Symiler not able to parse this email*******\n" + JSON.stringify(parseMessage(message))
                 }
                 if (j == 0 && message.payload.body.data) {
                     console.log(parseMessage(message))
