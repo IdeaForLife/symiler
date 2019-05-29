@@ -17,6 +17,7 @@
 
     <table id="myTable">
         <tr style="text-align: left">
+            <th>Message ID</th>
             <th>Message Summary</th>
             <th>Mime Type</th>
             <th>Extracted Text from HTML content</th>
@@ -114,11 +115,15 @@
 
                 var table = document.getElementById("myTable");
                 var row = table.insertRow(i);
+                
                 var cell1 = row.insertCell(0);
                 var cell2 = row.insertCell(1);
                 var cell3 = row.insertCell(2);
-                cell1.innerHTML = message.snippet;
-                cell2.innerHTML = message.payload.mimeType;
+                var cell4 = row.insertCell(3);
+                
+                cell1.innerHTML = message.id;
+                cell2.innerHTML = message.snippet;
+                cell3.innerHTML = message.payload.mimeType;
                 //cell2.innerHTML = "Raw"
                 //var html = atob(message.raw.replace(/-/g, '+').replace(/_/g, '/'));
                 //   console.log(html)
@@ -130,15 +135,15 @@
                     htmlDoc.open()
                     htmlDoc.write(parsedMessage)
                     htmlDoc.close()
-                    cell3.innerHTML = "*****Symiler textPlain number of body tags: " + htmlDoc.getElementsByTagName("BODY").length + "********\n" + extractContent(htmlDoc.getElementsByTagName("BODY")[0].innerHTML, true);
-                    //cell3.innerHTML = "*****Symiler extracted text from email********\n" + parseMessage(message).textPlain
+                    cell4.innerHTML = "*****Symiler textPlain number of body tags: " + htmlDoc.getElementsByTagName("BODY").length + "********\n" + extractContent(htmlDoc.getElementsByTagName("BODY")[0].innerHTML, true);
+                    //cell4.innerHTML = "*****Symiler extracted text from email********\n" + parseMessage(message).textPlain
                 } else {
-                    //cell3.innerHTML = "*****Symiler not able to parse this email*******\n" + JSON.stringify(parseMessage(message))
+                    //cell4.innerHTML = "*****Symiler not able to parse this email*******\n" + JSON.stringify(parseMessage(message))
                     var htmlDoc = document.implementation.createHTMLDocument('');
                     htmlDoc.open()
                     htmlDoc.write(parsedMessage)
                     htmlDoc.close()
-                    cell3.innerHTML = "*****Symiler textHtml number of body tags: " + htmlDoc.getElementsByTagName("BODY").length + "********\n" + extractContent(htmlDoc.getElementsByTagName("BODY")[0].innerHTML, true);
+                    cell4.innerHTML = "*****Symiler textHtml number of body tags: " + htmlDoc.getElementsByTagName("BODY").length + "********\n" + extractContent(htmlDoc.getElementsByTagName("BODY")[0].innerHTML, true);
                 }
                 if (j == 0 && message.payload.body.data) {
                     //console.log(parseMessage(message))
