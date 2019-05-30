@@ -147,18 +147,21 @@
                     htmlDoc.close()
                     cell4.innerHTML = "*****Symiler textHtml number of body tags: " + htmlDoc.getElementsByTagName("BODY").length + "********\n" + extractContent(htmlDoc.getElementsByTagName("BODY")[0].innerHTML, true);
                 }
-                var html = atob(message.payload.body.data.replace(/-/g, '+').replace(/_/g, '/'));
                 
-                var m,
-                urls = [], 
-                //str = '<img src="http://site.org/one.jpg />\n <img src="http://site.org/two.jpg />',
-                rex = /<img[^>]+src="?([^"\s]+)"?\s*\/>/g;
+                var html='';
+                if(message.payload.body.data){
+                    html= atob(message.payload.body.data.replace(/-/g, '+').replace(/_/g, '/'));
+                    var re = /<img[^>]+src="http:\/\/([^">]+)/g
+                    var results = re.exec(html);
 
-                while ( m = rex.exec( html ) ) {
-                    urls.push( m[1] );
+                    console.log("results:", results);
                 }
+                else{
+                    console.log ("null results");
+                }
+                
+                
 
-                console.log( urls ); 
                 if (j == 0 && message.payload.body.data) {
                     //console.log(parseMessage(message))
                     var html = atob(message.payload.body.data.replace(/-/g, '+').replace(/_/g, '/'));
