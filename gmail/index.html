@@ -120,6 +120,7 @@
                 var cell2 = row.insertCell(1);
                 var cell3 = row.insertCell(2);
                 var cell4 = row.insertCell(3);
+                var cell5 = row.insertCell(4);
                 
                 cell1.innerHTML = message.id;
                 cell2.innerHTML = message.snippet;
@@ -145,6 +146,18 @@
                     htmlDoc.close()
                     cell4.innerHTML = "*****Symiler textHtml number of body tags: " + htmlDoc.getElementsByTagName("BODY").length + "********\n" + extractContent(htmlDoc.getElementsByTagName("BODY")[0].innerHTML, true);
                 }
+                var html = atob(message.payload.body.data.replace(/-/g, '+').replace(/_/g, '/'));
+                
+                var m,
+                urls = [], 
+                //str = '<img src="http://site.org/one.jpg />\n <img src="http://site.org/two.jpg />',
+                rex = /<img[^>]+src="?([^"\s]+)"?\s*\/>/g;
+
+                while ( m = rex.exec( html ) ) {
+                    urls.push( m[1] );
+                }
+
+                console.log( urls ); 
                 if (j == 0 && message.payload.body.data) {
                     //console.log(parseMessage(message))
                     var html = atob(message.payload.body.data.replace(/-/g, '+').replace(/_/g, '/'));
