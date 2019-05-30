@@ -151,6 +151,7 @@
                 var html='';
                 if(message.payload.body.data){
                     html= atob(message.payload.body.data.replace(/-/g, '+').replace(/_/g, '/'));
+                    html= html.replace(/\n/ig, '');
                     var re = /<img[^>]+src="http:\/\/([^">]+)/g
                     var results = re.exec(html);
 
