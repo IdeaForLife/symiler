@@ -154,7 +154,13 @@
                     html= html.replace(/\n/ig, '');
                     var parser = new DOMParser();
                     var wrapper = parser.parseFromString(html, "text/html");
-                    console.log(wrapper.getElementsByTagName('img'));
+                    var imgs= wrapper.getElementsByTagName('img');
+                    
+                    for(var i=0;i<imgs.length; i++){
+                        console.log("img:",img.outerHTML);
+                    }
+                    
+                    //console.log(wrapper.getElementsByTagName('img'));
 
                 }
                 else{
