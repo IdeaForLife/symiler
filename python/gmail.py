@@ -36,7 +36,7 @@ def main():
             creds.refresh(Request())
         else:
             flow = InstalledAppFlow.from_client_secrets_file(
-                '.\credentials.json', SCOPES)
+                'credentials.json', SCOPES)
             creds = flow.run_local_server()
         # Save the credentials for the next run
         with open('token.pickle', 'wb') as token:
@@ -50,7 +50,7 @@ def main():
     messages = results.get('messages', [])
 
     if not messages:
-        print('No labels found.')
+        print('No promotions found.')
     else:
         print('messages:')
         for id in messages:
