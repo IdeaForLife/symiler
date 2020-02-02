@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>creditCardsMobile.ipa</key>
+	<array>
+		<dict>
+			<key>architectures</key>
+			<array>
+				<string>armv7</string>
+				<string>arm64</string>
+			</array>
+			<key>certificate</key>
+			<dict>
+				<key>SHA1</key>
+				<string>3D42AFB505E4CAB54805999B8C284406F9CB616F</string>
+				<key>dateExpires</key>
+				<string>8/4/20</string>
+				<key>type</key>
+				<string>iOS Development</string>
+			</dict>
+			<key>entitlements</key>
+			<dict>
+				<key>application-identifier</key>
+				<string>KTK23627V8.org.reactjs.native.example.creditCardsMobile425</string>
+				<key>com.apple.developer.team-identifier</key>
+				<string>KTK23627V8</string>
+				<key>get-task-allow</key>
+				<true/>
+				<key>keychain-access-groups</key>
+				<array>
+					<string>KTK23627V8.org.reactjs.native.example.creditCardsMobile425</string>
+				</array>
+			</dict>
+			<key>name</key>
+			<string>creditCardsMobile.app</string>
+			<key>profile</key>
+			<dict>
+				<key>UUID</key>
+				<string>c4ff7732-d568-460b-9a9f-44610109d2c6</string>
+				<key>name</key>
+				<string>iOS Team Provisioning Profile: *</string>
+			</dict>
+			<key>team</key>
+			<dict>
+				<key>id</key>
+				<string>KTK23627V8</string>
+				<key>name</key>
+				<string>Ashish  kattamuri</string>
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>
