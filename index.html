@@ -1,153 +1,84 @@
-<!DOCTYPE html>
-<html>
-<title>Symiler</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="symiler icon" href="assets/images/browser_icon.png" />
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<script src="js/feature.js"></script>
-<link rel="stylesheet" href="styles/feature.css">
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-97845838-2"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  gtag('config', 'UA-97845838-2');
-</script>
-<body>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
 
-    <div class="main-container">
-        <!-- Navbar -->
-        <nav class="navbar navbar-default">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>                        
-                    </button>
-                    <a class="navbar-brand" href="#">
-                        <img src="assets/images/logo.png">
-                    </a>
-                </div>
-                <div class="collapse navbar-collapse" id="myNavbar">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#">ABOUT US</a></li>
-                        <li><a href="#keyfeatures">FEATURES</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+    <!-- Custom Css -->
+    <link rel="stylesheet" href="style.css" type="text/css" />
 
-        <!-- First Container -->
-        <div class="container-fluid bg-1">
-            <div class="first-section" style=" height: 100%; color: black">
-                <div class="col-sm-6  h-100 d-flex justify-content-center align-items-center">
-                    <div class="text-center">
-                        <p style="color : black">
-                            <span class="w3-jumbo w3-hide-small" style="color:cadetblue">Your deals at your ease!</span>
-                            <span class="w3-xxlarge w3-hide-large w3-hide-medium" style="color:cadetblue">Your deals at your ease!</span>
-                        </p>
-                        <p class="w3-large" style="color:cadetblue">A smart deal catalog from your emails</p>
-                    </div>
+    <!-- Ionic icons -->
+    <link href="https://unpkg.com/ionicons@4.2.0/dist/css/ionicons.min.css" rel="stylesheet">
 
-                </div>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
 
-                <div class="col-sm-6 h-100 d-flex justify-content-center align-items-center">
-                    <div>
-                        <img class="img-responsive" src="assets/images/magicfunnel.png">
-                    </div>
+    <title>Symiler</title>
+  </head>
 
-                </div>
-            </div>
+  <body>
 
-        </div>
+  <!-- N A V B A R -->
+  <nav class="navbar navbar-default navbar-expand-lg fixed-top custom-navbar">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="icon ion-md-menu"></span>
+    </button>
+    <img src="images/logo.png" class="img-fluid nav-logo-mobile" alt="Symiler Logo">
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <div class="container">
+      	<img src="images/logo.png" class="img-fluid nav-logo-desktop" alt="Symiler Logo">
+      </div>
     </div>
+  </nav>
+  <!-- E N D  N A V B A R -->
 
-
-    <!-- Features-->
-    <div class="features" id="keyfeatures">
-
-        <div class="featureheading text-center">
-            <p style="width: 100%; color:cadetblue; font-weight: 800; letter-spacing: 2px; text-decoration: underline;"> FEW KEY FEATURES OF SYMILER
-                <p>
+  <!-- H E R O -->
+  <section id="hero">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+          <img src="images/iphone.png" class="img-fluid" alt="Demo image">
         </div>
-
-        <div class="row" style=" height: 100%; cursor: pointer">
-            <div class="col-md-6" style="height: 100%; ">
-                <div class="carousel" style="height: 800px;">
-                    <img id="nearbyImg" src="assets/images/mapView.png" alt="nearby" class="img-responsive" />
-                    <img id="expiredImg" src="assets/images/expired.png" alt="expired" class="img-responsive" />
-                    <img id="activeImg" src="assets/images/active.png" alt="active" class="img-responsive" />
-                    <img id="calendarImg" src="assets/images/calenderView.png" alt="calendar" class="img-responsive" />
-                </div>
-            </div>
-            <div class="col-md-6" style=" padding-left: 20px;  ">
-                <div id="active" style="padding:20px">
-
-                    <img id="active_icon" src="assets/images/active_logo.png" style="width: 12%" class="img-responsive center-block active feature" />
-                    <h4 id="active_title" class="text-center active feature">DEAL BOX</h4>
-                    <p id="active_desc" class="text-justify active feature">All your deals in one place. No more scrolling through a long list of emails, no more last minute searches. Symiler puts all you deals, in an easy to use Dealbox.</p>
-                </div>
-
-                <div id="calendar" style="padding:20px">
-                    <img id="calendar_icon" src="assets/images/calendar_icon.png" style="width: 12%" class="img-responsive center-block calendar feature" />
-                    <h4 id="calendar_title" class="text-center calendar feature">SMART VIEWS</h4>
-                    <p id="calendar_desc" class="text-justify calendar feature">Our smart AI will arrange your deals for you. View by Calendar, or Category, or explore all deals. Symiler organizes the emails for your ease. Let Symiler work for you, while you shop at ease.</p>
-                </div>
-
-                <div id="nearby" style="padding:20px">
-                    <img id="nearby_icon" src="assets/images/nearby_icon.png" style="width: 12%" class="img-responsive center-block nearby feature" />
-                    <h4 id="nearby_title" class="text-center nearby feature">NEARBY DEALS</h4>
-                    <p id="nearby_desc" class="text-justify nearby feature">Map view with nearby offers, Get notfied of deals when you are at the store</p>
-                </div>
-
-                <div id="expired" style="padding:20px">
-                    <img id="expired_icon" src="assets/images/expired_icon.png" style="width: 12%" class="img-responsive center-block expired feature" />
-                    <h4 id="expired_title" class="text-center expired feature">DECLUTTER YOUR EMAILS</h4>
-                    <p id="expired_desc" class="text-justify expired feature">Symiler automatically cleans your inbox by archiving outdated deals, organizing active deals, and moving your favorite deals to your Symiler Dealbox</p>
-                </div>
-            </div>
-
+        <div class="col-md-7 content-box hero-content">
+          <h1>Recommend your favorite <b>Movies and TV shows</b></h1>
+          <p> Search, find and save your favorites. Personalized feed of recommendations from your friends.</p>
         </div>
+      </div>
     </div>
+  </section>
+  <!-- E N D  H E R O -->
 
-    <div style="width: 100%; margin-top: 50px; color:gray" class="addFeatures">
-        <div class="featureheading text-center">
-            <p style="width: 100%; color:cadetblue; font-weight: 800; letter-spacing: 2px; text-decoration: underline;"> OTHER FEATURES
-                <p>
-        </div>
 
-        <div class="row" style="margin-top: 75px;">
-            <div class="col-md-4 col-sm-6">
-                <p class="text-center" style="color: #5CA4D5"><i class="fa fa-bell-o w3-margin-bottom w3-jumbo"></i></p>
-                <h4 class="text-center" style="font-weight: 800; font-size: 15px"> SMART NOTIFICATIONS</h4>
-                <p class="text-center">Get notified on the go. Our smart notification system, alerts you of deals, depending on your current location. Shop carefree, while we bring the deals right to you.
-                </p>
-            </div>
-            <div class="col-md-4 col-sm-6">
-                <p class="text-center" style="color: #5CA4D5"><i class="fa fa-share-alt w3-margin-bottom w3-jumbo text-center"></i></p>
-                <h4 class="text-center" style="font-weight: 800; font-size: 15px"> DEAL SHARING </h4>
-                <p class="text-center">Share your unused deals with friends and family that might need them. Borrow deals you need with one click request from your friends. Let’s save together!</p>
-            </div>
-
-            <div class="col-md-4 col-sm-6">
-                <p class="text-center" style="color: #5CA4D5"><i class="fa fa-snowflake-o w3-margin-bottom w3-jumbo text-center"></i> </p>
-                <h4 class="text-center" style="font-weight: 800; font-size: 15px"> DEALS WISHLIST </h4>
-                <p class="text-center">Let us know deals you want, Symiler’s tireless helpers will bring deals you want, right into your Dealbox.</p>
-            </div>
-        </div>
-        <div class="row">
-            <img class="img-responsive" src="assets/images/footer.png" />
-        </div>
+  <!--  F O O T E R  -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <!--
+          <div class="col-md-6 col-xs-12">
+            <a href="#"><i class="icon ion-logo-facebook"></i></a>
+            <a href="#"><i class="icon ion-logo-instagram"></i></a>
+            <a href="#"><i class="icon ion-logo-twitter"></i></a>
+            <a href="#"><i class="icon ion-logo-youtube"></i></a>
+          </div>
+        -->
+          <div class="col-md-6 col-xs-12">
+            <small> <a href="privacy-policy.html" target="blank" class="external-links">Privacy Policy</a></small>
+          </div>
+      </div>
     </div>
-</body>
+  </footer>
+  <!--  E N D  F O O T E R  -->
 
+
+    <!-- External JavaScripts -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+
+  </body>
 </html>
